@@ -2,7 +2,7 @@ const recipes = [
     { recipe_name: 'Broccoli Pesto Pasta' },
     { recipe_name: 'Lemon Chicken' },
     { recipe_name: 'Salmon en Papillote' },
-]
+];
 
 const ingredients = [
     { ingredient_name: 'Broccoli', ingredient_unit: 'lbs' },
@@ -11,7 +11,7 @@ const ingredients = [
     { ingredient_name: 'Lemon', ingredient_unit: 'slices' },
     { ingredient_name: 'Chicken', ingredient_unit: 'kilos' },
     { ingredient_name: 'Salmon', ingredient_unit: 'grams' },
-]
+];
 
 const step_ingredients = [
     // Broccoli Pesto Pasta
@@ -23,7 +23,7 @@ const step_ingredients = [
     { step_id: 5, ingredient_id: 5, quantity: 0.4 },
     // Salmon en Papillote
     { step_id: 7, ingredient_id: 6, quantity: 1 },
-]
+];
 
 const steps = [
     // Broccoli Pesto Pasta
@@ -37,12 +37,11 @@ const steps = [
     // Salmon en Papillote
     { step_text: 'Fish a salmon in the Bidasoa river', step_number: 1, recipe_id: 3 },
     { step_text: 'Cook salmon', step_number: 2, recipe_id: 3 },
-    
-]
+];
 
 exports.seed = async function (knex) {
-   await knex(recipes).insert(recipes)
-   await knex(ingredients).insert(ingredients)
-   await knex(steps).insert(steps)
-   await knex(step_ingredients).insert(step_ingredients)
-}
+    await knex('recipes').insert(recipes);
+    await knex('ingredients').insert(ingredients);
+    await knex('steps').insert(steps);
+    await knex('step_ingredients').insert(step_ingredients);
+};
